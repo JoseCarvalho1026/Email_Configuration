@@ -139,3 +139,57 @@ __________________________________________________________
 
 - 995
 __________________________________________________________
+
+### If you don't want to change the certificates that already come, where it says "example.com.crt" or "example.com.key", leave it as is. If you want to change the default certificates you will have to install "easy-rsa" and you will have to change the certificates that already come:
+
+Install the "easy-rsa" [Certificates_Installation](https://github.com/JoseCarvalho1026/Certificates_Installation).
+
+After installing "easy-rsa" and configuring it, create the certificate, for example:
+
+◻️ `./easyrsa build-server-full example.com nopass` ;
+
+◻️ `cp /etc/easy-rsa/pki/ca.crt /etc/ssl/certs/` ;
+
+◻️ `cp /etc/easy-rsa/pki/issued/example.com.crt /etc/ssl/certs/` ;
+
+◻️ `cp /etc/easy-rsa/pki/private/example.com.key /etc/ssl/private/` ;
+
+◻️ `cd /etc/ssl/private/` ;
+
+◻️ `chown --reference=ssl-cert-snakeoil.key example.com.key` .
+__________________________________________________________
+After creating the certificates:
+
+◻️ `nano /etc/dovecot/conf.d/10-ssl.conf` ;
+
+Change from "no" to "yes":
+```
+ssl = yes
+```
+And uncomment and modify:
+```
+ssl_cert = </etc/ssl/certs/example.com.crt
+ssl_key = </etc/ssl/private/example.com.key
+```
+◻️ `nano /etc/postfix/main.cf` ;
+
+Change:
+```
+smtpd_tls_cert_file=/etc/ssl/certs/example.com.crt
+smtpd_tls_key_file=/etc/ssl/private/example.com.key
+```
+◻️ `systemctl restart dovecot` .
+__________________________________________________________
+## Client
+
+### Installation of the graphical environment with thunderbird:
+
+Access the following link to install the graphical environment [Graphical_Interface](https://github.com/JoseCarvalho1026/Graphical_Interface) and pay attention to the following point.
+
+◻️ Add in the command `sudo apt install -y xrdp chromium-browser` `thunderbird` .
+
+### Adicionar os utilizadores:
+
+◻️ `adduser flavio` ;
+◻️ `cp /home/ubuntu/.xsession /home/flavio/.xsession` ;
+◻️ `chown flavio:flavio /home/flavio/.xsession` .
