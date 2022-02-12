@@ -182,7 +182,7 @@ smtpd_tls_key_file=/etc/ssl/private/example.com.key
 __________________________________________________________
 ## Client
 
-### Installation of the graphical environment with thunderbird:
+### Installation of the graphical interface with thunderbird:
 
 Access the following link to install the graphical environment [Graphical_Interface](https://github.com/JoseCarvalho1026/Graphical_Interface) and pay attention to the following point.
 
@@ -190,8 +190,8 @@ Access the following link to install the graphical environment [Graphical_Interf
 
 ### Adicionar os utilizadores:
 
-◻️ `adduser flavio` ;
+◻️ `adduser user` ;
 
-◻️ `cp /home/ubuntu/.xsession /home/flavio/.xsession` ;
+◻️ `cp /home/ubuntu/.xsession /home/user/.xsession` ;
 
-◻️ `chown flavio:flavio /home/flavio/.xsession` .
+◻️ `chown user:user /home/user/.xsession` .
