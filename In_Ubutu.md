@@ -191,5 +191,7 @@ Access the following link to install the graphical environment [Graphical_Interf
 ### Adicionar os utilizadores:
 
 ◻️ `adduser flavio` ;
+
 ◻️ `cp /home/ubuntu/.xsession /home/flavio/.xsession` ;
+
 ◻️ `chown flavio:flavio /home/flavio/.xsession` .
