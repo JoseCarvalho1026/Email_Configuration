@@ -16,7 +16,7 @@
 
 ◻️ `apt update && apt upgrade` ;
 
-### Installing Postfix and Dovecot
+### Install Postfix and Dovecot
 
 ◻️ `apt -y install postfix postfix-doc dovecot-imapd dovecot-pop3d sasl2-bin` ;
 
@@ -188,7 +188,7 @@ Access the following link to install the graphical environment [Graphical_Interf
 
 ◻️ Add in the command `sudo apt install -y xrdp chromium-browser` `thunderbird` .
 
-### Adicionar os utilizadores:
+### Add the users:
 
 ◻️ `adduser user` ;
 
