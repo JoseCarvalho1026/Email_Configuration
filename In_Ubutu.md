@@ -1,14 +1,10 @@
 # Email_Configuration
 # In AWS
-🔴 2 Instance (1 Server and 1 client);
-
-🔴 2 Elastic IPs (for each instance).
+🔴 In "central.inova.pt" after having done RAID-5 and NIS and NFS;
 
 # In Termius
 
-## Server
-
-◻️ `sudo hostnamectl set-hostname example.example.com` ;
+## "central.inova.pt"
 
 ◻️ `sudo su -`;
 
@@ -26,7 +22,7 @@ Configuration of `dpkg-reconfigure postfix` :
 
 ```
 2
-example.com
+inova.pt
 ubuntu
 do not modify
 no
@@ -73,7 +69,7 @@ __________________________________________________________
 
 ### When the user is already created:
 
-◻️ `login user` ;
+◻️ `login sales` / `login marketing`;
 
 ◻️ `maildirmake.dovecot Maildir` ;
 
@@ -140,11 +136,7 @@ __________________________________________________________
 - 995
 __________________________________________________________
 
-### If you don't want to change the certificates that already come, where it says "example.com.crt" or "example.com.key", leave it as is. If you want to change the default certificates you will have to install "easy-rsa" and you will have to change the certificates that already come:
-
-Install the "easy-rsa" [Certificates_Installation](https://github.com/JoseCarvalho1026/Certificates_Installation).
-
-After installing "easy-rsa" and configuring it, create the certificate, for example:
+If you don't want to change the certificates that already come, leave them as they are. If you want to change the default certificates, you will have to go to "control.inova.pt" or "easy-rsa" and you will have to create them, for example:
 
 ◻️ `./easyrsa build-server-full example.com nopass` ;
 
